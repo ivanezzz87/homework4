@@ -3,14 +3,19 @@ package belhard.java28;
 public class Rectangle {
     private double x;
     private double y;
+    private static int createRectangles;
+    private final static String RUSSIAN_CLASS_NAME = "Прямоугольник";
+    private final static String ENGLISH_CLASS_NAME = "Rectangle";
 
     public Rectangle (double inX, double inY) {
         this.x = inX;
         this.y = inY;
+        createRectangles++;
     }
     public Rectangle (double in) {
         this.x = in;
         this.y = in;
+        createRectangles++;
     }
     public double CalculatedArea () {
         return x*y;
@@ -36,4 +41,15 @@ public class Rectangle {
             return true;
         } else {return false;}
     }
+    public static void  PrintRectanglesCount() {
+        System.out.println("Всего было создано " + createRectangles + " прямоугольников");
+    }
+    public static void PrintClassName(boolean printInRussian) {
+        if (printInRussian) {
+            System.out.println(RUSSIAN_CLASS_NAME);
+        } else {
+            System.out.println(ENGLISH_CLASS_NAME);
+        }
+    }
+
 }
